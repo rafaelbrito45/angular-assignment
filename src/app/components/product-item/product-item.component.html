@@ -1,0 +1,24 @@
+<div class="card h-100 p-1" style="width: 18rem">
+  <fa-icon
+    [ngStyle]="{ color: 'red' }"
+    [icon]="faTimes"
+    (click)="onDelete(product)"
+  ></fa-icon>
+  <img src="{{ dynamicSrc() }}" class="card-img-top" alt="..." />
+  <div class="card-body">
+    <h5 class="card-title">
+      {{ product.title }}
+    </h5>
+    <div class="card-text">
+      <p>${{ product.price }}</p>
+      <p class="fs-6">{{ product.description }}</p>
+    </div>
+    <div>
+      <app-button
+        color="primary"
+        text="edit"
+        (btnClick)="toggleEditProduct(product)"
+      ></app-button>
+    </div>
+  </div>
+</div>

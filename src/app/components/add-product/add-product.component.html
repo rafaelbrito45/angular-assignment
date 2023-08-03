@@ -1,0 +1,67 @@
+<form *ngIf="toggleForms()" (ngSubmit)="onSubmit()" class="mb-5">
+  <div class="d-flex flex-wrap justify-content-between">
+    <div class="mb-3 input-box">
+      <label class="form-label" for="text">Title</label>
+      <input
+        class="form-control form-control-sm"
+        type="text"
+        name="title"
+        [(ngModel)]="title"
+        id="title"
+        placeholder="Title"
+      />
+    </div>
+    <div class="mb-3 input-box">
+      <label class="form-label" for="text">price</label>
+      <input
+        class="form-control form-control-sm"
+        type="number"
+        name="price"
+        [(ngModel)]="price"
+        id="price"
+        placeholder="Price"
+      />
+    </div>
+    <div class="mb-3 input-box">
+      <label class="form-label" for="text">Description</label>
+      <input
+        class="form-control form-control-sm"
+        type="text"
+        name="description"
+        [(ngModel)]="description"
+        id="description"
+        placeholder="Description"
+      />
+    </div>
+    <div class="mb-3 input-box">
+      <label class="form-label" for="text">Image</label>
+      <input
+        class="form-control form-control-sm"
+        type="text"
+        name="image"
+        [(ngModel)]="image"
+        id="image"
+        placeholder="Image URL"
+      />
+    </div>
+    <div class="mb-3 input-box">
+      <label class="form-label" for="text">Category</label>
+      <input
+        class="form-control form-control-sm"
+        type="text"
+        name="category"
+        [(ngModel)]="category"
+        id="category"
+        placeholder="Category"
+      />
+    </div>
+  </div>
+
+  <div *ngIf="showValidationMessage" class="d-flex justify-content-between">
+    <p class="text-danger fs-6">Price and number are required</p>
+  </div>
+
+  <div class="d-flex justify-content-center">
+    <input type="submit" value="Save Product" class="btn-sm btn btn-success" />
+  </div>
+</form>

@@ -1,0 +1,8 @@
+<header class="d-flex justify-content-between">
+  <h1>{{ title }}</h1>
+  <app-button
+    color="{{ handleButtonContent() ? 'danger' : 'success' }}"
+    text="{{ handleButtonContent() ? 'Close' : 'Add Product' }}"
+    (btnClick)="toggleAddProduct()"
+  ></app-button>
+</header>

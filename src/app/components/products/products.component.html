@@ -1,0 +1,15 @@
+<app-add-product (onAddProduct)="addProduct($event)"></app-add-product>
+<app-edit-product
+  [product]="editingProduct"
+  (onEditProduct)="editProduct($event)"
+></app-edit-product>
+
+<div class="d-flex flex-wrap justify-content-around">
+  <app-product-item
+    *ngFor="let product of products"
+    class="mb-4"
+    [product]="product"
+    (onDeleteProduct)="deleteProduct(product)"
+    (onEmitEditProduct)="emitEditProduct(product)"
+  ></app-product-item>
+</div>
